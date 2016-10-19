@@ -1,7 +1,7 @@
 'use strict'
 
 var Router = {
-	actualRoute: '/',
+    actualRoute: '',
     reset: function () {
       this.routes = [];
     },
