@@ -63,11 +63,13 @@ var Router = {
                 for (var j = 0; j <= this.routes[i].route.length-1; j++) {
                     if(this.routes[i].route[j] == this.actualRoute){
                         this.loadRoute(this.routes[i].moduleId);
+                        document.title = this.routes[i].title;
                     }
                 }
             } else {
                 if(this.actualRoute == this.routes[i].route){
                     this.loadRoute(this.routes[i].moduleId);
+                    document.title = this.routes[i].title;
                 }
             }
         }
