@@ -3,6 +3,10 @@
 const Router = {
     currentRoute: '',
 
+    init() {
+        this.navigateToRoute(this.getCurrentRoute());
+    },
+
     reset() {
       this.routes = [];
     },
@@ -51,12 +55,12 @@ const Router = {
             }
         }
 
-    	this.navigateToRoute(this.currentRoute);
+    	return this.currentRoute;
     },
 
     configMap(routes) {
     	this.routes = routes;
-        this.getCurrentRoute();
+        this.init();
 
         let nav_html = '';
         for (let i = 0; i <= routes.length-1; i++) {
