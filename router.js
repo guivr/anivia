@@ -95,7 +95,6 @@ function getRouteChangers() {
     for (var i = 0; i <= routeChangers.length-1; i++) {
         if (document.addEventListener) {
             routeChangers[i].addEventListener('click', function() {
-                console.log('clickou');
                 Router.navigateToRoute(this.getAttribute('href').split('#/')[1]);
             });
         } else {
