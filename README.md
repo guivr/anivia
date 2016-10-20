@@ -1,5 +1,7 @@
 # anivia
 The simplest SPA framework
 
-To load the views, you need a simple python server:
+OBS: To load the views, you need to turn on a server.
+
+Example:
 `python -m SimpleHTTPServer 3000`
