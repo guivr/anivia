@@ -17,7 +17,7 @@ Router.configMap([
 		route: 'teste',
 		name: 'teste',
 		moduleId: 'views/teste',
-		nav: true,
-		title: 'Geral'
+		nav: false,
+		title: 'Teste'
 	}
 ]);

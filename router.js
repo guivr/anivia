@@ -53,6 +53,20 @@ var Router = {
     configMap: function (routes) {
     	this.routes = routes;
     	this.getActualRoute();
+
+        var nav_html = '';
+        for (var i = 0; i <= routes.length-1; i++) {
+            if(routes[i].nav) {
+                if(typeof routes[i].route === 'object'){
+                    nav_html += '<a href="#/'+routes[i].route[0]+'" class="route-changer"><li>'+routes[i].title+'</li></a>';
+                } else {
+                    nav_html += '<a href="#/'+routes[i].route+'" class="route-changer"><li>'+routes[i].title+'</li></a>';
+                }
+            }
+        }
+        var nav = document.getElementsByTagName('nav')[0].innerHTML = '<ul>'+nav_html+'</ul>';
+
+        getRouteChangers();
     },
     navigateToRoute: function (route) {
     	this.actualRoute = route;
@@ -75,3 +89,19 @@ var Router = {
         }
     }
 };
+
+function getRouteChangers() {
+    var routeChangers = document.querySelectorAll(".route-changer");
+    for (var i = 0; i <= routeChangers.length-1; i++) {
+        if (document.addEventListener) {
+            routeChangers[i].addEventListener('click', function() {
+                console.log('clickou');
+                Router.navigateToRoute(this.getAttribute('href').split('#/')[1]);
+            });
+        } else {
+            routeChangers[i].attachEvent('onclick', function() {
+                Router.navigateToRoute(routeChangers[i].getAttribute('href').split('#/')[1]);
+            });
+        };
+    }
+}
