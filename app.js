@@ -1,6 +1,6 @@
 Router.configMap([
 	{
-		route: ['', 'teste'],
+		route: ['', 'outras', 'rotas'],
 		name: 'index',
 		moduleId: 'views/index',
 		nav: true,
