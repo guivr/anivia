@@ -14,7 +14,7 @@ const Router = {
     loadRoute(name) {
         let xmlhttp = new XMLHttpRequest();
 
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = () => {
             if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
                if (xmlhttp.status == 200) {
                    document.getElementById('viewer').innerHTML = xmlhttp.responseText;
